@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>A basic HTML table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>name</th>
+    <th>email</th>
+    <th>phone</th>
+    <th>Action</th>
+    <th>Update</th>
+
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{i.name}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.phone}}</td>
+    <td><a href="/delete/{{i.id}}">delete</td>
+    <td><a href="/update/{{i.id}}">update</td>  
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+
